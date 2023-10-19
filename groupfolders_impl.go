@@ -53,8 +53,7 @@ func (g *groupFolders) Create(name string) (id int, err error) {
 	}
 	var r groupFoldersCreateResponse
 	res.JSON(&r)
-	id, _ = strconv.Atoi(r.Ocs.Data.ID)
-	return id, nil
+	return r.Ocs.Data.ID, nil
 }
 
 //Rename renames the group folder
